@@ -3,37 +3,25 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Test Widget</title>
-  <style>
-    body{margin:0;font-family:system-ui;background:#0b1220;color:#e8eefc;padding:20px}
-    .box{border:1px solid rgba(255,255,255,.12);border-radius:16px;overflow:hidden;min-height:600px}
-  </style>
+  <title>Test widget</title>
 </head>
-
 <body>
 
-  <!-- IMPORTANT : la config -->
-  <api-sports-widget
-    data-type="config"
+  <api-sports-widget data-type="standings"
+    data-league="61"
+    data-season="2025">
+  </api-sports-widget>
+
+  <api-sports-widget data-type="config"
     data-key="6434514a877b63cd0057cb44e3c61b6c"
     data-sport="football"
     data-lang="fr"
     data-theme="blue"
     data-timezone="Europe/Paris"
-    data-show-errors="true"
-  ></api-sports-widget>
+    data-show-errors="true">
+  </api-sports-widget>
 
-  <h1>Classement Ligue 1</h1>
+  <script type="module" src="https://widgets.api-sports.io/2.0.3/widgets.js"></script>
 
-  <div class="box">
-    <api-sports-widget
-      data-type="standings"
-      data-league="61"
-      data-season="2025"
-    ></api-sports-widget>
-  </div>
-
-  <!-- IMPORTANT : script normal (PAS module) -->
-  <script src="https://widgets.api-sports.io/2.0.3/widgets.js"></script>
 </body>
 </html>
