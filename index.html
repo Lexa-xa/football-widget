@@ -114,6 +114,17 @@
 </head>
 
 <body>
+
+  <api-sports-widget data-type="config"
+    data-key="6434514a877b63cd0057cb44e3c61b6c"
+    data-sport="football"
+    data-lang="fr"
+    data-theme="blue"
+    data-timezone="Europe/Paris"
+    data-show-errors="true"
+  ></api-sports-widget>
+
+
   <div class="topbar">
     <div class="wrap">
       <div class="title"><span class="dot"></span> Compétitions</div>
@@ -290,22 +301,13 @@
 
         </div>
 
-        <!-- Une seule config sur la page -->
-        <api-sports-widget data-type="config"
-          data-key="6434514a877b63cd0057cb44e3c61b6c"
-          data-sport="football"
-          data-lang="fr"
-          data-theme="blue"
-          data-timezone="Europe/Paris"
-          data-show-errors="true"
-        ></api-sports-widget>
+
 
       </div>
     </div>
   </div>
 
-  <!-- Widgets script (garde celui qui marche chez toi) -->
-  <script type="module" src="https://widgets.api-sports.io/2.0.3/widgets.js"></script>
+
 
   <script>
     const TITLES = {
@@ -374,5 +376,8 @@
     window.addEventListener("hashchange", applyHash);
     applyHash();
   </script>
+  
+  <script type="module" src="https://widgets.api-sports.io/2.0.3/widgets.js"></script>
+
 </body>
 </html>
