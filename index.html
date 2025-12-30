@@ -3,18 +3,60 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Test API-SPORTS</title>
+  <title>Classement Ligue 1 (API-SPORTS)</title>
+
+  <style>
+    /* Page propre, sans marges, et conteneur responsive */
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      background: transparent;
+      overflow-x: hidden;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    /* Wrapper responsive (idéal dans un iframe Wix) */
+    .widget-wrap {
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    /*
+      IMPORTANT:
+      - Sur mobile, Wix met souvent une largeur iframe plus petite.
+      - Le widget peut “déborder” si sa table est large.
+      => On autorise le scroll horizontal UNIQUEMENT si nécessaire.
+    */
+    .widget-scroll {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* Pour éviter un widget collé aux bords sur mobile */
+    @media (max-width: 480px) {
+      .widget-wrap { padding: 8px; }
+      .widget-scroll { border-radius: 12px; }
+    }
+  </style>
 </head>
 
 <body>
-  <!-- Widget Standings (test) -->
-  <api-sports-widget
-    data-type="standings"
-    data-league="61"
-    data-season="2025"
-  ></api-sports-widget>
+  <div class="widget-wrap">
+    <div class="widget-scroll">
+      <!-- Widget Standings -->
+      <api-sports-widget
+        data-type="standings"
+        data-league="61"
+        data-season="2025"
+      ></api-sports-widget>
+    </div>
+  </div>
 
-  <!-- Configuration (obligatoire, 1 seule fois) -->
+  <!-- Configuration (OBLIGATOIRE, 1 seule fois) -->
   <api-sports-widget
     data-type="config"
     data-key="6434514a877b63cd0057cb44e3c61b6c"
@@ -25,7 +67,7 @@
     data-show-errors="true"
   ></api-sports-widget>
 
-  <!-- Script widgets : UNE SEULE FOIS, EN BAS, EN MODULE -->
+  <!-- Script widgets : 1 seule fois, en bas -->
   <script type="module" src="https://widgets.api-sports.io/3.1.0/widgets.js"></script>
 </body>
 </html>
